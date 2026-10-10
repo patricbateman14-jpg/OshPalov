@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n-title="title.menu">Меню — OSHPALOV</title>
+  <meta name="description" content="Меню ресторана OSHPALOV: салаты, первые и вторые блюда, уйгурская кухня, плов, самса, шашлык, напитки и чай.">
+  <meta name="theme-color" content="#263866">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/menu.js" defer></script>
+</head>
+<body class="page-menu" data-page="menu">
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="page-title">
+      <span class="cloud cloud--a" aria-hidden="true"></span>
+      <span class="cloud cloud--b" aria-hidden="true"></span>
+      <div class="container">
+        <img class="page-hero__logo" src="assets/logo.png" alt="" width="76" height="76">
+        <p class="eyebrow" data-i18n="menu.eyebrow">Меню ресторана</p>
+        <h1 id="page-title" data-i18n="menu.title">Меню</h1>
+        <div class="divider"><span></span></div>
+        <p data-i18n="menu.lead">Узбекская и уйгурская кухня, шашлык, самса, напитки и чай. Цены указаны в сумах.</p>
+      </div>
+    </section>
+
+    <div class="menu-toolbar" id="menu-anchor">
+      <div class="container menu-toolbar__inner">
+        <div class="chip-scroller" id="menu-chips" role="group" data-i18n-aria="menu.catNav"></div>
+        <div class="search" role="search">
+          <label class="visually-hidden" for="menu-search" data-i18n="menu.searchLabel">Поиск по меню</label>
+          <span data-icon="search"></span>
+          <input id="menu-search" type="search" autocomplete="off" data-i18n-placeholder="menu.searchPh" placeholder="Найти блюдо…">
+          <button class="search__clear" id="menu-search-clear" type="button" data-i18n-aria="menu.searchClear" hidden>&times;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="menu-meta">
+        <p class="menu-count" id="menu-count" role="status" aria-live="polite"></p>
+        <p class="service-note"><span data-icon="info"></span><span data-i18n="service.note">Обслуживание — 15%</span><small data-i18n="service.hint">Указано в меню ресторана. Не включено в цены блюд.</small></p>
+      </div>
+
+      <section class="signature-strip" id="menu-signature" data-i18n-aria="menu.sigTitle"></section>
+
+      <div id="menu-root"></div>
+
+      <div class="empty-state" id="menu-empty" hidden>
+        <div class="empty-state__icon"><span data-icon="search"></span></div>
+        <h2 data-i18n="menu.emptyTitle">Ничего не найдено</h2>
+        <p data-i18n="menu.emptyText">Попробуйте изменить запрос или выбрать другой раздел.</p>
+        <button class="btn btn--outline" id="menu-reset" type="button" data-i18n="menu.reset">Сбросить фильтры</button>
+      </div>
+
+      <div class="menu-end">
+        <button class="btn btn--outline" id="menu-back" type="button"><span data-icon="up"></span><span data-i18n="menu.backTop">К началу меню</span></button>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+OSHPALOV demo — image sources
+==============================
+
+assets/images/dishes/
+  Photos supplied by the client (sent in chat): sokoro, salad-eggplant, kuza-shurva,
+  lagman, kazan-kabob, nokhat-shurak, shashlik-beef, plov, samsa-tandir, salad-caesar,
+  salad-eggplant-tomato, salad-greek, salad-japanese, salad-kapriz, salad-olivier,
+  salad-rucola-beet, salad-signature, salad-maftunkor, mastava, chuchvara,
+  kaynatma-shurva, darmon-shurva, assorti, jiz, manti, manti-yogurt, lagman-fried,
+  sumboro, gushtsay, ayrim-say, shashlik-minced, shashlik-chicken, shashlik-liver,
+  samsa-chicken, samsa-potato, samsa-meat.
+  -> Their original authorship/licence was not provided. Before publishing the site,
+     replace them with the restaurant's own photos or confirm usage rights.
+
+  Unsplash (Unsplash License, free for commercial use, no attribution required):
+  all other files in this folder except okroshka.jpg. Photo IDs are listed in the
+  project history; e.g. plov-hero = photo-1671048116858-e8ef69175b2d.
+
+  okroshka.jpg — Wikimedia Commons, author: Nikkolo, licence CC BY-SA 3.0
+  (attribution required if published).
+
+assets/images/*.jpg (interior-*, hero-dining) — Unsplash, representative stock
+images, not the restaurant's actual interior.

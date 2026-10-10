@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n-title="title.contacts">Контакты — OSHPALOV</title>
+  <meta name="description" content="Контакты ресторана OSHPALOV и форма бронирования стола (демо).">
+  <meta name="theme-color" content="#263866">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/contacts.js" defer></script>
+</head>
+<body class="page-contacts" data-page="contacts">
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="page-title">
+      <span class="cloud cloud--a" aria-hidden="true"></span>
+      <span class="cloud cloud--b" aria-hidden="true"></span>
+      <div class="container">
+        <p class="eyebrow" data-i18n="con.eyebrow">Контакты</p>
+        <h1 id="page-title" data-i18n="con.title">Ждём вас в гости</h1>
+        <div class="divider"><span></span></div>
+        <p data-i18n="con.lead">Свяжитесь с нами или оставьте заявку на бронирование стола.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight-top">
+      <div class="container contact-layout">
+        <!-- Contact details: all values are DEMO PLACEHOLDERS defined in js/data.js (CONTACTS) -->
+        <div class="contact-side reveal">
+          <div class="contact-cards" id="contact-cards"></div>
+          <p class="demo-note"><span data-icon="info"></span><span data-i18n="con.placeholderNote">Контактные данные на этой странице — демонстрационные и будут заменены.</span></p>
+          <div class="map-placeholder" role="img" data-i18n-aria="con.mapText">
+            <div>
+              <span class="map-pin" data-icon="pin"></span>
+              <strong data-i18n="con.mapTitle">Карта</strong>
+              <span data-i18n="con.mapText">Здесь будет карта с расположением ресторана.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card reveal reveal-d1" id="reservation" tabindex="-1">
+          <p class="eyebrow eyebrow--start" data-i18n="con.formEyebrow">Бронирование</p>
+          <h2 data-i18n="con.formTitle">Забронировать стол</h2>
+          <p data-i18n="con.formLead">Заполните форму — поля со звёздочкой обязательны.</p>
+
+          <form id="reservation-form" novalidate>
+            <div class="form-summary" id="form-summary" role="alert" hidden data-i18n="form.errorSummary">Проверьте выделенные поля.</div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name"><span data-i18n="form.name">Имя</span><span class="req" aria-hidden="true">*</span></label>
+                <input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required aria-describedby="f-name-error" data-i18n-placeholder="form.namePh" placeholder="Как к вам обращаться">
+                <p class="field-error" id="f-name-error"></p>
+              </div>
+              <div class="field">
+                <label for="f-phone"><span data-i18n="form.phone">Телефон</span><span class="req" aria-hidden="true">*</span></label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" required aria-describedby="f-phone-error" data-i18n-placeholder="form.phonePh" placeholder="+998 90 123 45 67">
+                <p class="field-error" id="f-phone-error"></p>
+              </div>
+              <div class="field">
+                <label for="f-date"><span data-i18n="form.date">Дата</span><span class="req" aria-hidden="true">*</span></label>
+                <input id="f-date" name="date" type="date" required aria-describedby="f-date-error">
+                <p class="field-error" id="f-date-error"></p>
+              </div>
+              <div class="field">
+                <label for="f-time"><span data-i18n="form.time">Время</span><span class="req" aria-hidden="true">*</span></label>
+                <input id="f-time" name="time" type="time" step="900" required aria-describedby="f-time-error">
+                <p class="field-error" id="f-time-error"></p>
+              </div>
+              <div class="field field--full">
+                <label for="f-guests"><span data-i18n="form.guests">Количество гостей</span><span class="req" aria-hidden="true">*</span></label>
+                <input id="f-guests" name="guests" type="number" inputmode="numeric" min="1" max="50" step="1" value="2" required aria-describedby="f-guests-error">
+                <p class="field-error" id="f-guests-error"></p>
+              </div>
+              <div class="field field--full">
+                <label for="f-comment"><span data-i18n="form.comment">Комментарий</span> <span class="opt">(<span data-i18n="form.optional">необязательно</span>)</span></label>
+                <textarea id="f-comment" name="comment" maxlength="500" data-i18n-placeholder="form.commentPh" placeholder="Пожелания к столу, повод, детский стул…"></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit"><span data-i18n="form.submit">Отправить заявку</span><span data-icon="arrow"></span></button>
+              <small data-i18n="form.demoNote">Демо-форма: данные никуда не отправляются.</small>
+            </div>
+          </form>
+
+          <div class="form-success" id="reservation-success" tabindex="-1" role="status" hidden>
+            <div class="form-success__icon"><span data-icon="check"></span></div>
+            <h3 class="h2" data-success-title></h3>
+            <p class="form-success__details" data-success-details></p>
+            <div class="divider"><span></span></div>
+            <p data-i18n="form.successText">Это демонстрационная форма: заявка не отправлена и бронирование не создано.</p>
+            <button class="btn btn--outline" id="reservation-again" type="button" data-i18n="form.again">Заполнить снова</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

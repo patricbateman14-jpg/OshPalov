@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n-title="title.about">О ресторане — OSHPALOV</title>
+  <meta name="description" content="OSHPALOV — узбекская кухня и восточное гостеприимство.">
+  <meta name="theme-color" content="#263866">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="page-about" data-page="about">
+  <div id="site-header"></div>
+
+  <!-- NOTE: the brand story below is sample demo copy, not verified facts
+       about the restaurant (no founding year, founders or awards are claimed). -->
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="page-title">
+      <span class="cloud cloud--a" aria-hidden="true"></span>
+      <span class="cloud cloud--b" aria-hidden="true"></span>
+      <span class="cloud cloud--c" aria-hidden="true"></span>
+      <div class="container">
+        <p class="eyebrow" data-i18n="about.eyebrow">О ресторане</p>
+        <h1 id="page-title" data-i18n="about.title">Традиции, которые объединяют</h1>
+        <div class="divider"><span></span></div>
+        <p data-i18n="about.lead">Узбекская кухня — это не только вкус, но и особое отношение к гостю.</p>
+      </div>
+    </section>
+
+    <div class="container wide-photo reveal">
+      <div class="media"><img src="assets/images/interior-hall.jpg" alt="Зал ресторана с сервированными столами" data-i18n-alt="alt.hall"></div>
+    </div>
+
+    <section class="section" aria-labelledby="story-title">
+      <div class="container split">
+        <div class="split__text reveal">
+          <p class="eyebrow eyebrow--start" data-i18n="about.storyEyebrow">Наша история</p>
+          <h2 id="story-title" data-i18n="about.storyTitle">Кухня, рождённая у казана</h2>
+          <div class="divider divider--start"><span></span></div>
+          <p data-i18n="about.storyText1">В узбекской традиции застолье — это повод собраться вместе. Плов готовят неспешно, лепёшки подают горячими, а чай наливают первым делом.</p>
+          <p data-i18n="about.storyText2">В OSHPALOV мы бережно сохраняем эти привычки: готовим по классическим рецептам, подаём щедро и встречаем каждого гостя с теплом.</p>
+        </div>
+        <div class="split__media reveal reveal-d1">
+          <div class="media"><img src="assets/images/dishes/plov.jpg" alt="Свадебный плов" data-i18n-alt="home.frameCaption" loading="lazy"></div>
+          <div class="split__accent media"><img src="assets/images/dishes/samsa-meat.jpg" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--beige" aria-labelledby="exp-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="about.expEyebrow">Как у нас принято</p>
+          <h2 id="exp-title" data-i18n="about.expTitle">Ваш вечер в OSHPALOV</h2>
+          <div class="divider"><span></span></div>
+        </header>
+        <div class="steps">
+          <article class="step reveal">
+            <div class="step__icon" data-icon="tea"></div>
+            <h3 data-i18n="about.exp1Title">Тёплая встреча</h3>
+            <p data-i18n="about.exp1Text">Первым делом — пиала горячего чая и свежая патыр кульча.</p>
+          </article>
+          <article class="step reveal reveal-d1">
+            <div class="step__icon" data-icon="dish"></div>
+            <h3 data-i18n="about.exp2Title">Щедрый дастархан</h3>
+            <p data-i18n="about.exp2Text">Салаты, шурпа, плов из казана и шашлык — блюда, которыми принято делиться.</p>
+          </article>
+          <article class="step reveal reveal-d2">
+            <div class="step__icon" data-icon="people"></div>
+            <h3 data-i18n="about.exp3Title">Неспешная беседа</h3>
+            <p data-i18n="about.exp3Text">Уютный зал, где можно провести вечер с семьёй и друзьями.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="food-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="about.foodEyebrow">С нашей кухни</p>
+          <h2 id="food-title" data-i18n="about.foodTitle">Блюда, приготовленные с душой</h2>
+          <div class="divider"><span></span></div>
+        </header>
+        <div class="photo-row reveal">
+          <div class="media"><img src="assets/images/dishes/nokhat-shurak.jpg" alt="Нохат шурак" loading="lazy"></div>
+          <div class="media"><img src="assets/images/dishes/kuza-shurva.jpg" alt="Куза шурва" loading="lazy"></div>
+          <div class="media"><img src="assets/images/dishes/lagman.jpg" alt="Лагман" loading="lazy"></div>
+          <div class="media"><img src="assets/images/dishes/salad-eggplant.jpg" alt="Хрустящий баклажан" loading="lazy"></div>
+          <div class="media"><img src="assets/images/dishes/shashlik-beef.jpg" alt="Шашлык" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper">
+      <div class="container reveal">
+        <p class="quote-block" data-i18n="about.quote">Хороший плов готовят не для себя, а для тех, кто сядет за стол.</p>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container reveal">
+        <img class="cta-band__logo" src="assets/logo.png" alt="" width="70" height="70" loading="lazy">
+        <h2 id="cta-title" data-i18n="about.ctaTitle">Попробуйте сами</h2>
+        <div class="divider"><span></span></div>
+        <p data-i18n="about.ctaText">Загляните в меню и выберите блюда для вашего вечера.</p>
+        <div class="btn-row">
+          <a class="btn btn--gold" href="menu.html"><span data-i18n="about.ctaBtn">Перейти в меню</span><span data-icon="arrow"></span></a>
+          <a class="btn btn--light" href="contacts.html#reservation" data-i18n="nav.reserve">Забронировать</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

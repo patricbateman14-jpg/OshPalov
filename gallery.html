@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n-title="title.gallery">Галерея — OSHPALOV</title>
+  <meta name="description" content="Фотографии блюд и атмосферы ресторана OSHPALOV.">
+  <meta name="theme-color" content="#263866">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+</head>
+<body class="page-gallery" data-page="gallery">
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="page-title">
+      <span class="cloud cloud--a" aria-hidden="true"></span>
+      <span class="cloud cloud--b" aria-hidden="true"></span>
+      <div class="container">
+        <p class="eyebrow" data-i18n="gal.eyebrow">Галерея</p>
+        <h1 id="page-title" data-i18n="gal.title">Вкус в каждом кадре</h1>
+        <div class="divider"><span></span></div>
+        <p data-i18n="gal.lead">Блюда нашей кухни и атмосфера ресторана.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight-top">
+      <div class="container">
+        <div class="gallery-filters" id="gallery-filters" role="group" data-i18n-aria="gal.filter"></div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" data-i18n-aria="gal.dialog">
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="">
+      <figcaption class="lightbox__caption">
+        <span class="lightbox__text"></span>
+        <span class="lightbox__counter"></span>
+      </figcaption>
+    </figure>
+    <button class="lb-btn lb-prev" type="button" data-i18n-aria="gal.prev"><span data-icon="left"></span></button>
+    <button class="lb-btn lb-next" type="button" data-i18n-aria="gal.next"><span data-icon="right"></span></button>
+    <button class="lb-btn lb-close" type="button" data-i18n-aria="gal.close"><span data-icon="close"></span></button>
+  </dialog>
+
+  <div id="site-footer"></div>
+</body>
+</html>

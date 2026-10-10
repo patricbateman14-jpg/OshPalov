@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n-title="title.checkout">Оформление заказа — OSHPALOV</title>
+  <meta name="description" content="Оформление онлайн-заказа в ресторане OSHPALOV (демо).">
+  <meta name="theme-color" content="#263866">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/checkout.js" defer></script>
+</head>
+<body class="page-checkout" data-page="checkout">
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="page-title">
+      <span class="cloud cloud--a" aria-hidden="true"></span>
+      <span class="cloud cloud--b" aria-hidden="true"></span>
+      <div class="container">
+        <p class="eyebrow" data-i18n="co.eyebrow">Онлайн-заказ</p>
+        <h1 id="page-title" data-i18n="co.title">Оформление заказа</h1>
+        <div class="divider"><span></span></div>
+        <p data-i18n="co.lead">Проверьте заказ, укажите контакты и способ получения.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight-top">
+      <div class="container">
+        <!-- Empty cart -->
+        <div class="cart-empty" id="co-empty" hidden>
+          <div class="cart-empty__icon"><span data-icon="bag"></span></div>
+          <h2 data-i18n="co.emptyTitle">В корзине пока ничего нет</h2>
+          <p data-i18n="co.emptyText">Добавьте блюда из меню, чтобы оформить заказ.</p>
+          <a class="btn btn--primary" href="menu.html" data-i18n="cart.toMenu">Перейти в меню</a>
+        </div>
+
+        <!-- Success -->
+        <div class="form-card order-success" id="co-success" tabindex="-1" role="status" hidden>
+          <div class="form-success__icon"><span data-icon="check"></span></div>
+          <h2 data-co-success-title></h2>
+          <span class="order-number" data-co-number></span>
+          <p class="form-success__details" data-co-details></p>
+          <div class="divider"><span></span></div>
+          <p data-i18n="co.successText">Это демонстрационная версия: заказ не отправлен в ресторан и оплата не списана.</p>
+          <a class="btn btn--outline" href="menu.html" data-i18n="co.successBack">Вернуться в меню</a>
+        </div>
+
+        <div class="checkout-layout" id="co-layout">
+          <div class="form-card">
+            <form id="checkout-form" novalidate>
+              <div class="form-summary" id="co-summary" role="alert" hidden data-i18n="form.errorSummary">Проверьте выделенные поля.</div>
+
+              <h2 data-i18n="co.contacts">Контактные данные</h2>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="c-name"><span data-i18n="form.name">Имя</span><span class="req" aria-hidden="true">*</span></label>
+                  <input id="c-name" name="name" type="text" autocomplete="name" maxlength="60" required aria-describedby="c-name-error" data-i18n-placeholder="form.namePh">
+                  <p class="field-error" id="c-name-error"></p>
+                </div>
+                <div class="field">
+                  <label for="c-phone"><span data-i18n="form.phone">Телефон</span><span class="req" aria-hidden="true">*</span></label>
+                  <input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" required aria-describedby="c-phone-error" data-i18n-placeholder="form.phonePh">
+                  <p class="field-error" id="c-phone-error"></p>
+                </div>
+
+                <fieldset class="choice-group field--full">
+                  <legend data-i18n="co.type">Способ получения</legend>
+                  <div class="choices">
+                    <label class="choice"><input type="radio" name="type" value="delivery" checked><span><span data-icon="truck"></span><span data-i18n="co.typeDelivery">Доставка</span></span></label>
+                    <label class="choice"><input type="radio" name="type" value="pickup"><span><span data-icon="bag"></span><span data-i18n="co.typePickup">Самовывоз</span></span></label>
+                    <label class="choice"><input type="radio" name="type" value="dine"><span><span data-icon="store"></span><span data-i18n="co.typeDine">В ресторане</span></span></label>
+                  </div>
+                </fieldset>
+
+                <div class="field field--full" id="c-address-field">
+                  <label for="c-address"><span data-i18n="co.address">Адрес доставки</span><span class="req" aria-hidden="true">*</span></label>
+                  <input id="c-address" name="address" type="text" autocomplete="street-address" maxlength="160" aria-describedby="c-address-error" data-i18n-placeholder="co.addressPh">
+                  <p class="field-error" id="c-address-error"></p>
+                </div>
+
+                <fieldset class="choice-group field--full">
+                  <legend data-i18n="co.when">Время</legend>
+                  <div class="choices choices--2">
+                    <label class="choice"><input type="radio" name="when" value="asap" checked><span><span data-icon="clock"></span><span data-i18n="co.asap">Как можно скорее</span></span></label>
+                    <label class="choice"><input type="radio" name="when" value="later"><span><span data-icon="clock"></span><span data-i18n="co.later">Ко времени</span></span></label>
+                  </div>
+                </fieldset>
+
+                <div class="field" id="c-time-field" hidden>
+                  <label for="c-time"><span data-i18n="form.time">Время</span><span class="req" aria-hidden="true">*</span></label>
+                  <input id="c-time" name="time" type="time" step="900" aria-describedby="c-time-error">
+                  <p class="field-error" id="c-time-error"></p>
+                </div>
+
+                <fieldset class="choice-group field--full">
+                  <legend data-i18n="co.payment">Оплата</legend>
+                  <div class="choices choices--2">
+                    <label class="choice"><input type="radio" name="payment" value="cash" checked><span><span data-icon="cash"></span><span data-i18n="co.payCash">Наличными</span></span></label>
+                    <label class="choice"><input type="radio" name="payment" value="card"><span><span data-icon="card"></span><span data-i18n="co.payCard">Картой при получении</span></span></label>
+                  </div>
+                </fieldset>
+
+                <div class="field field--full">
+                  <label for="c-comment"><span data-i18n="form.comment">Комментарий</span> <span class="opt">(<span data-i18n="form.optional">необязательно</span>)</span></label>
+                  <textarea id="c-comment" name="comment" maxlength="500"></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn--gold" type="submit"><span data-i18n="co.submit">Подтвердить заказ</span><span data-icon="arrow"></span></button>
+                <small data-i18n="co.demoNote">Демо: заказ никуда не отправляется и оплата не производится.</small>
+              </div>
+            </form>
+          </div>
+
+          <aside class="summary-card" aria-labelledby="sum-title">
+            <h2 id="sum-title" data-i18n="co.summary">Ваш заказ</h2>
+            <div id="co-lines"></div>
+            <dl class="summary-rows" id="co-rows"></dl>
+            <a class="link-arrow summary-edit" href="menu.html"><span data-i18n="co.edit">Изменить в меню</span><span data-icon="arrow"></span></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
