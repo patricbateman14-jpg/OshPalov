@@ -1,12 +1,1 @@
-{
-  "name": "oshpalov-frontend",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "data": "json-server --watch db.json --port 3001",
-    "start": "npm run data"
-  },
-  "devDependencies": {
-    "json-server": "0.17.4"
-  }
-}
+{"name":"oshpalov-frontend","version":"1.1.0","private":true,"scripts":{"dev":"vite --host 0.0.0.0","build":"vite build","preview":"vite preview"},"devDependencies":{"vite":"^6.0.0"}}
