@@ -128,12 +128,9 @@
 
     const subtotal = cartSubtotal();
     const service = orderType() === 'dine' ? Math.round(subtotal * SERVICE_RATE) : 0;
-    lastOrder = {
-      name: form.elements.name.value.trim(),
-      number: String(Math.floor(1000 + Math.random() * 9000)), // demo number only
-      count: cartCount(),
-      total: subtotal + service
-    };
+    lastOrder = { name:form.elements.name.value.trim(), number:String(Math.floor(1000+Math.random()*9000)), count:cartCount(), total:subtotal+service };
+    const order = { id:Date.now(), customer:lastOrder.name, phone:form.elements.phone.value.trim(), type:orderType(), items:cartLines().map(({item,qty})=>dishNames(item).primary+' × '+qty).join(', '), total:lastOrder.total, payment:form.elements.payment.value==='card'?'Karta':'Naqd', status:'Yangi', address:form.elements.address?.value||'', time:form.elements.time?.value||'', comment:form.elements.comment?.value||'', createdAt:new Date().toISOString() };
+    OshStore.add('orders',order).then(()=>OshStore.add('sales',{date:new Date().toISOString().slice(0,10),orderId:order.id,total:order.total,payment:order.payment})).catch(err=>console.error('Buyurtma saqlanmadi:',err));
     cartClear();
     layout.hidden = true;
     renderSuccess();
