@@ -1,0 +1,201 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrator",
+      "role": "admin",
+      "username": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Kassir",
+      "role": "cashier",
+      "username": "cashier"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ali Karimov",
+      "position": "Oshpaz",
+      "phone": "+998901112233",
+      "salary": 4500000,
+      "status": "Faol"
+    },
+    {
+      "id": 2,
+      "name": "Madina Rasulova",
+      "position": "Ofitsiant",
+      "phone": "+998902223344",
+      "salary": 2800000,
+      "status": "Faol"
+    },
+    {
+      "id": 3,
+      "name": "Jasur Tursunov",
+      "position": "Kassir",
+      "phone": "+998903334455",
+      "salary": 3200000,
+      "status": "Faol"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "To‘y oshi",
+      "category": "Osh",
+      "price": 65000,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Qozon kabob",
+      "category": "Ikkinchi taomlar",
+      "price": 95000,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Lag‘mon",
+      "category": "Uyg‘ur taomlari",
+      "price": 50000,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "Ko‘za sho‘rva",
+      "category": "Birinchi taomlar",
+      "price": 55000,
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "Achchiq-chuchuk",
+      "category": "Salatlar",
+      "price": 18000,
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "Somsa",
+      "category": "Gazaklar",
+      "price": 12000,
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "Ko‘k choy",
+      "category": "Ichimliklar",
+      "price": 8000,
+      "available": true
+    }
+  ],
+  "orders": [
+    {
+      "id": 1001,
+      "customer": "Azizbek",
+      "phone": "+998901234567",
+      "type": "Restoranda",
+      "items": "To‘y oshi × 2, Achchiq-chuchuk × 1",
+      "total": 148000,
+      "payment": "Naqd",
+      "status": "Yangi",
+      "createdAt": "2026-11-21T09:30:00"
+    },
+    {
+      "id": 1002,
+      "customer": "Dilnoza",
+      "phone": "+998907654321",
+      "type": "Olib ketish",
+      "items": "Lag‘mon × 1",
+      "total": 50000,
+      "payment": "Karta",
+      "status": "Tayyor",
+      "createdAt": "2026-11-21T10:10:00"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 501,
+      "name": "Sardor",
+      "phone": "+998901010101",
+      "date": "2026-11-22",
+      "time": "19:00",
+      "guests": 4,
+      "status": "Tasdiqlangan"
+    },
+    {
+      "id": 502,
+      "name": "Malika",
+      "phone": "+998909090909",
+      "date": "2026-11-23",
+      "time": "18:30",
+      "guests": 2,
+      "status": "Kutilmoqda"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Nodira",
+      "rating": 5,
+      "comment": "Osh juda mazali, xizmat a’lo!",
+      "date": "2026-11-20"
+    },
+    {
+      "id": 2,
+      "name": "Bekzod",
+      "rating": 4,
+      "comment": "Yaxshi muhit va mazali taomlar.",
+      "date": "2026-11-19"
+    }
+  ],
+  "promocodes": [
+    {
+      "id": 1,
+      "code": "OSHPALOV10",
+      "discount": 10,
+      "active": true
+    },
+    {
+      "id": 2,
+      "code": "WELCOME15",
+      "discount": 15,
+      "active": true
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "date": "2026-11-20",
+      "orderId": 998,
+      "total": 245000,
+      "payment": "Karta"
+    },
+    {
+      "id": 2,
+      "date": "2026-11-20",
+      "orderId": 999,
+      "total": 180000,
+      "payment": "Naqd"
+    },
+    {
+      "id": 3,
+      "date": "2026-11-21",
+      "orderId": 1001,
+      "total": 148000,
+      "payment": "Naqd"
+    }
+  ],
+  "shifts": [
+    {
+      "id": 1,
+      "cashier": "Jasur Tursunov",
+      "openedAt": "2026-11-21T08:00:00",
+      "closedAt": null,
+      "cashStart": 200000,
+      "cashEnd": null,
+      "status": "Ochiq"
+    }
+  ]
+}
