@@ -126,14 +126,10 @@
     }
 
     const data = new FormData(form);
-    lastBooking = {
-      name: String(data.get('name')).trim(),
-      date: formatDate(data.get('date')),
-      time: data.get('time'),
-      guests: data.get('guests')
-    };
+    lastBooking = { name: String(data.get('name')).trim(), date: formatDate(data.get('date')), time: data.get('time'), guests: data.get('guests') };
+    const booking = { name:lastBooking.name, phone:String(data.get('phone')).trim(), date:data.get('date'), time:lastBooking.time, guests:Number(lastBooking.guests), comment:String(data.get('comment')||''), status:'Kutilmoqda', createdAt:new Date().toISOString() };
+    OshStore.add('reservations', booking).catch(err=>console.error('Bron saqlanmadi:',err));
     renderSuccess();
-
     form.hidden = true;
     success.hidden = false;
     success.focus();
