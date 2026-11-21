@@ -1,0 +1,27 @@
+{
+  "redirects": [
+    {
+      "source": "/dashboard.html",
+      "destination": "/admin",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/kassa",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/kassa/:path*",
+      "destination": "/dashboard.html"
+    }
+  ]
+}
